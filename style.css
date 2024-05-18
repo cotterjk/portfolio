@@ -1,0 +1,440 @@
+@font-face {
+    font-family: Redaction;
+    src=url(assets/Redaction);
+}
+
+:root {
+    --light: #CD9769;
+    --dark: #191611;
+    --dark-overlay: #191611cc;
+    --highlight: #2E4D2E;
+    --Section-Padding: 25px;
+    --Stack-Spacing: 30px;
+    --stack-spacing-mini: 10px;
+
+/*Keeping font rules for now as a record of other ones I liked*/
+
+    --body-font: "IBM Plex Sans", sans-serif;
+/*    --body-font: "Noto Sans", sans-serif;*/
+/*    --body-font: "Source Sans 3", sans-serif;*/
+/*    --body-font: "Inter", sans-serif;*/
+/*    --body-font: "Inconsolata", sans-serif;*/
+
+    --accent-font: "Newsreader", serif;
+/*    --accent-font: "Redaction 35", serif;*/
+/*    --accent-font: "Literata", serif;*/
+
+}
+
+
+#intro-column-container {
+    border: var(--dark) solid;
+    border-width: 1px 0;
+}
+
+#intro-column {
+    padding: var(--Section-Padding, 35px);
+
+}
+
+#work-column {
+    border: var(--dark) solid;
+    border-width: 0;
+    border-bottom-width: 1px;
+}
+
+#about-popup {
+    background: var(--dark-overlay);
+    position: absolute;
+    height: 100%;
+    border: var(--dark) solid;
+    border-width: 1px 0;
+    z-index: 99999;
+}
+
+#about-section {
+    background: var(--light);
+    opacity: 100%;
+    padding: var(--Section-Padding, 35px);
+    border: var(--dark) solid;
+    border-width: 0 1px 0 0;
+}
+
+#bio-container {
+    position: relative;
+}
+
+#bio-writeup {
+    padding-right: var(--Section-Padding, 35px);
+    padding-bottom: var(--Section-Padding, 35px);
+}
+
+#bio-spacer {
+
+}
+
+#bio-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#bio-close:hover {
+    color:var(--light);
+    background-color: var(--dark);
+    cursor: pointer;
+}
+
+#bio-photo {
+    position: absolute;
+    padding-top: var(--Section-Padding, 35px);
+    padding-left: var(--Section-Padding, 35px);
+    right: 0;
+    width: 66.66666666667%;
+}
+
+html {
+    background-color: var(--dark);
+
+}
+
+body {
+    background-color: var(--light);
+}
+
+*:focus {
+    outline: none !important;
+    /*    background-color: var(--highlight);*/
+/*    background: color-mix(in srgb, var(--highlight) 20%, transparent);*/
+    background: radial-gradient(var(--highlight), transparent 70%);
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, button {
+    font-weight: normal;
+    margin: 0;
+    font-weight: 400;
+    color: var(--dark);
+}
+
+p {
+    font-family: var(--body-font);
+    margin: 0;
+    font-size: 0.9rem;
+    margin-top: .75em;
+    line-height: 150%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--accent-font);
+    letter-spacing: -0.02em;
+    line-height: 100%;
+
+}
+
+/*Section Header*/
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: .5em;
+    font-weight: 300;
+}
+
+/*Project Title*/
+h2 {
+    font-size: 1.75rem;
+    font-weight: 300;
+}
+
+/*Project Title - Client Name*/
+h3 {
+    font-size: 1.3rem;
+    font-family: var(--body-font);
+    font-weight: 300;
+}
+
+/* Mini Heading */
+h4 {
+    font-size: 1.2rem;
+    line-height: 110%;
+}
+
+/*"Tag"*/
+h5 {
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-top: 1em;
+}
+
+h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, p::selection, ul::selection, li::selection, button::selection  {
+    color:var(--light);
+    background-color: var(--dark);
+}
+
+a::selection  {
+    background-color: var(--highlight);
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid #0000ff; */
+}
+
+[class*='col-'] {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    color:inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color:var(--light);
+    background-color: var(--dark);
+}
+
+p.thumbnail_caption {
+    position: absolute;
+    z-index: -1;
+    padding: 0.5rem 0.8rem;
+    margin: 0;
+    bottom: 0;
+    color: var(--highlight);
+}
+
+ul {
+    list-style: none;
+    padding: inherit;
+}
+
+ul > li:before {
+/*    Get rid of bulleted dashes for li's used in slider*/
+    content: "-";
+    padding-right: 1rem;
+}
+
+/*SLIDER STYLES*/
+.list {
+  display: flex;
+  margin-top:0;
+  gap: var(--Section-Padding, 35px);
+  list-style: none;
+  list-style-type: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+        /* Hide scrollbar in Firefox */
+  scrollbar-width: none;
+
+  /* Hide scrollbar in IE and Edge */
+  -ms-overflow-style: none;
+}
+.list::-webkit-scrollbar {
+      display: none;
+    }
+
+ul.list > li:before {
+    display:none;
+}
+
+.item {
+    width: auto;
+    height: 66vh;
+    background-color: #FFF;
+    scroll-snap-align: center;
+}
+
+.slider-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto%;
+    background-color: orange;
+}
+
+.slider-content img {
+    height:100%;
+}
+
+.list-wrapper {
+    position: relative;
+}
+
+button {
+    border: 0;
+    background: none;
+    font-size: 1.2rem;
+    font-family: var(--body-font);
+}
+
+button:hover {
+    color: var(--highlight);
+}
+
+button.slider-button {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    color: var(--light);
+    mix-blend-mode: difference;
+}
+
+button.slider-button:hover {
+    color: var(--highlight);
+}
+
+button.slider-button--previous {
+  left: 0;
+}
+
+button.slider-button--next {
+  right: 0;
+}
+
+button.showHide {
+    font-size:2.5rem;
+}
+
+
+/*NEW PROJECT ROWS*/
+.project-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: stretch;
+}
+
+.preview-image {
+    width:33.333333333%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+.preview-image:hover {
+    cursor: pointer;
+    filter: grayscale(1);
+    mix-blend-mode: lighten;
+
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.slideshow {
+    width:100%;
+}
+
+.writeup {
+    display: contents;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.heading {
+    display: flex;
+    width: 100%;
+    padding: var(--Section-Padding, 35px);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading:hover {
+    background-color: var(--dark);
+    cursor: pointer;
+}
+
+.heading:hover * {
+    color: var(--light);
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--stack-spacing-mini, 10px);
+    flex: 1 0 0;
+}
+
+.name {
+    align-self: stretch;
+}
+
+.client {
+    align-self: stretch;
+}
+
+.description-container {
+    display: flex;
+    width: 100%;
+    padding: var(--Section-Padding, 35px);
+    padding-top: var(--stack-spacing-mini, 10px);
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--Stack-Spacing, 30px);
+}
+
+.hiddenProjectPiece {
+    display: none;
+}
+
+.openProject {
+/*    no change to row itself, just as open/close tag to use for logic of assigning hiddens class above to its children*/
+}
+
+.writeup, .slideshow, .preview-container {
+    border: var(--dark) solid;
+    border-width: 1px 0px;
+}
+
+/* mobile adjustments where bootstrap switches to mobile*/
+@media only screen and (max-width: 767px) {
+
+    #intro-column-container {
+        border: none;
+    }
+    
+    div #intro-column{
+        position: inherit;
+    }
+
+    .item {
+        height: 50vw;
+    }
+    .preview-image {
+        width:66.66666666%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+    }
+    h1 {
+         font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+    .description-container
+    {
+        gap:0;
+    }
+}

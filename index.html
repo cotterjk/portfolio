@@ -1,0 +1,366 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+
+        <!-- JQUERY -->
+        <!-- Rest of the scripting is near bottom -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cotter Koopman | Designer</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+
+        <!-- STYLING -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="row" >
+            <div class="col-md-3" id="intro-column-container">
+                <div class="sticky-top" id="intro-column">
+                    <h1 id="name-heading">Cotter Koopman</h1>
+                    <p>designs visual identities, websites, and print materials to harmonize information and narrative.</p>
+                    <p><a href="#"  onclick="toggleBioPopUp()">ABOUT <span id="about-arrow">→</span></a></p>
+                    <p><a href="assets/CotterKoopman_Resume.pdf" target="_blank">RESUME ↗</a></p>
+                    <p><a href="https://cotterkoopman.notion.site/making-a28de6f834ee4ba38c7dde7712f87653" target="_blank">CRAFTS ↗</a></p>
+                    <!-- This formatting should help block the email from harvester bots-->
+                    <p>cotterjk<span style="display:none;">ignoreme</span>@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="col-md-9" id="work-column">
+                <div class="row hiddenProjectPiece" id="about-popup">
+                    <div class="col-md-8" id="about-section">
+                        <div id="bio-container">
+                            <div id="bio-spacer"></div>
+                            <button id="bio-close" onclick="toggleBioPopUp()">✕</button>
+                            <div id="bio-writeup">
+                                <p>I began designing after studying software engineering and web development. I approached graphic design as a sort of visual programming: building flexible but cohesive systems with rule-based pieces.</p>
+                                <p>For years, I’ve developed my skillset at a <a href="https://kynda.co/" target="_blank">full-service marketing and storytelling agency</a>. I guide 50+ clients in many different industries through brand identities, cross-platform campaigns, websites and everyday print and digital needs. Day to day, my favorite thing to do is distill concepts into a visual system, and then extend it across an entire experience of materials.</p>
+                                <p>I’ve also found a personal practice in multimedia. I make music, programmatic visuals, and textiles to render data and logical patterns. I’m excited by combining what computers do best with mediums that feel real to people, and exploring experiences between systemized and manual creation. Most of that lives <a href="https://cotterkoopman.notion.site/making-a28de6f834ee4ba38c7dde7712f87653" target="_blank">here</a>, organized by mediums, tools, and themes.</p>
+                                <p>Making things keeps me alert to the world.</p>
+                            </div>
+                        </div>
+                        <img id="bio-photo" src="assets/portrait.jpg">
+                    </div>
+                </div>
+            <div class="row">
+                <!-- project containter id doesn't need to be ordered or named anything specific, just unique. They can be shuffled around, they're just used to reference everything inside it. In this case, I'm copy-pasting the name of the folder the assets can be found in.-->
+                <div class="project-container" id="project-GhostRanch_FindYourPlace">
+                    <div class="preview-container">
+                        <img class="preview-image" src="assets/projects/GhostRanch_FindYourPlace/1.png">
+                    </div>
+                    <div class="project-content">
+                        <div class="list-wrapper slideshow hiddenProjectPiece">
+                            <ul class="list">
+                                <li class="item"><div class="slider-content"><img src="assets/projects/GhostRanch_FindYourPlace/1.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/GhostRanch_FindYourPlace/2.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/GhostRanch_FindYourPlace/3.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/GhostRanch_FindYourPlace/4.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/GhostRanch_FindYourPlace/5.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/GhostRanch_FindYourPlace/6.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/GhostRanch_FindYourPlace/7.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/GhostRanch_FindYourPlace/8.png"></div></li>
+                            </ul>
+                            <!-- We're calling `handleClick` with a direction argument when the buttons are clicked -->
+                            <button onclick="handleClick(this.parentElement.parentElement.parentNode.id,'previous')" class="slider-button slider-button--previous" type="button">←</button>
+                            <button onclick="handleClick(this.parentElement.parentElement.parentNode.id,'next')" class="slider-button slider-button--next" type="button">→</button>
+                        </div>
+                        <div class="writeup">
+                            <div class="heading">
+                                <div class="title">
+                                    <h2 class="name">“Find Your Place” Capital Campaign</h2>
+                                    <h3 class="client">Ghost Ranch</h3>
+                                </div>
+                                <button class="showHide" onclick="toggleProjectOpen(this.parentElement.parentElement.parentElement.parentNode.id)">+</button>
+                            </div>
+                            <div class="row description-container hiddenProjectPiece">
+                                <div class="col-md-7">
+                                    <p>Ghost Ranch is a 21,000-acre retreat and education center in New Mexico. Most famously it was the home, studio, and frequent subject of Georgia O’Keeffe.</p><p>We conducted a cross-platform fundraising campaign to support Ghost Ranch’s capacity to expand. It focuses on a new sustainably built lodge, updating accommodations untouched since the 1950s to be more accessible to all ages and abilities, and reinvent the way visitors meet, learn, and stay.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Print Design</h5>
+                                    <h5>Web Design</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-container" id="project-ICCF_AdventCalendar2023">
+                    <div class="preview-container">
+                        <img class="preview-image" src="assets/projects/ICCF_AdventCalendar2023/1-preview.png">
+                    </div>
+                    <div class="project-content">
+                        <div class="list-wrapper slideshow hiddenProjectPiece">
+                            <ul class="list">
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2023/1.gif"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2023/2.jpg"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2023/3.jpg"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2023/4.jpg"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2023/5.jpg"></div></li>
+                            </ul>
+                            <!-- We're calling `handleClick` with a direction argument when the buttons are clicked -->
+                            <button onclick="handleClick(this.parentElement.parentElement.parentNode.id,'previous')" class="slider-button slider-button--previous" type="button">←</button>
+                            <button onclick="handleClick(this.parentElement.parentElement.parentNode.id,'next')" class="slider-button slider-button--next" type="button">→</button>
+                        </div>
+                        <div class="writeup">
+                            <div class="heading">
+                                <div class="title">
+                                    <h2 class="name">Interactive Advent Calendar, '23</h2>
+                                    <h3 class="client">ICCF Community Homes</h3>
+                                </div>
+                                <button class="showHide" onclick="toggleProjectOpen(this.parentElement.parentElement.parentElement.parentNode.id)">+</button>
+                            </div>
+                            <div class="row description-container hiddenProjectPiece">
+                                <div class="col-md-7">
+                                    <p>Each year, my agency handles an end-of-year giving campaign which builds upon an Advent calendar format: From December 1 to 25, one sticker a day builds up a picture of ICCF’s work in homeownership counseling, home renovation and construction, emergency sheltering services, and more.</p><p>This year’s calendar was also a game board. The road to safe, stable, and affordable housing can feel like a cruel game for many. Each board space describes a common barrier to home security. Each day, a sticker covers the next hurdle with an aspect of ICCF’s work, progressing toward the goal of not just homeownership, but a holistic sense of home for entire communities.</p><p>The print campaign includes the calendar poster and sticker set for hundreds of community members to follow along with at home, along with a personalized letter and donation materials. Additionally, I created a webpage adaption of the calendar which updated daily, along with email and social media reminders.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Art Direction</h5>
+                                    <h5>Print Design</h5>
+                                    <h5>Digital Design</h5>
+                                    <h5>Web Interaction</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-container" id="project-PWP_Brand">
+                    <div class="preview-container">
+                        <img class="preview-image" src="assets/projects/PWP_Brand/1.jpg">
+                    </div>
+                    <div class="project-content">
+                        <div class="list-wrapper slideshow hiddenProjectPiece">
+                            <ul class="list">
+                                <li class="item"><div class="slider-content"><img src="assets/projects/PWP_Brand/1.jpg"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/PWP_Brand/2.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/PWP_Brand/3.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/PWP_Brand/4.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/PWP_Brand/5.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/PWP_Brand/6.png"></div></li>
+                            </ul>
+                            <!-- We're calling `handleClick` with a direction argument when the buttons are clicked -->
+                            <button onclick="handleClick(this.parentElement.parentElement.parentNode.id,'previous')" class="slider-button slider-button--previous" type="button">←</button>
+                            <button onclick="handleClick(this.parentElement.parentElement.parentNode.id,'next')" class="slider-button slider-button--next" type="button">→</button>
+                        </div>
+                        <div class="writeup">
+                            <div class="heading">
+                                <div class="title">
+                                    <h2 class="name">Brand Identity & Materials</h2>
+                                    <h3 class="client">Peregrine Wood Products</h3>
+                                </div>
+                                <button class="showHide" onclick="toggleProjectOpen(this.parentElement.parentElement.parentElement.parentNode.id)">+</button>
+                            </div>
+                            <div class="row description-container hiddenProjectPiece">
+                                <div class="col-md-7">
+                                    <p>Peregrine Wood Products is a local custom pallet and crate provider. Their team determined particular colors, type styles, and icon material before approaching my agency for a brand identity. This way I was more able to demonstrate options with subtleties within their vision.</p><p>The logo’s icon contains a subtle nod to their namesake, evoking speed and precision in a simple, modern stamp. Combined with classic, clean type, flexible arrangements of the logo fit in any space—a square truck door or a long pallet plank.</p><p>The more natural color pallet evokes warmth and authenticity, demonstrated by their personalized customer service and bespoke pallet solutions. It is also bold, bright, and basic, demonstrating their vision for a sustainable future of logistics.</p><p>The website is entirely flat, with interlocking blocks, flush edges, and only the brand’s primary colors, for a professional but friendly, modern and clean experience.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Logo Design</h5>
+                                    <h5>Brand Identity</h5>
+                                    <h5>Print Design</h5>
+                                    <h5>Web Design</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-container" id="project-ICCF_AdventCalendar2022">
+                    <div class="preview-container">
+                        <img class="preview-image" src="assets/projects/ICCF_AdventCalendar2022/1.png">
+                    </div>
+                    <div class="project-content">
+                        <div class="list-wrapper slideshow hiddenProjectPiece">
+                            <ul class="list">
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2022/1.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2022/2.gif"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2022/3.jpg"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2022/4.jpg"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2022/5.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/ICCF_AdventCalendar2022/6.jpg"></div></li>
+                            </ul>
+                            <!-- We're calling `handleClick` with a direction argument when the buttons are clicked -->
+                            <button onclick="handleClick(this.parentElement.parentElement.parentNode.id,'previous')" class="slider-button slider-button--previous" type="button">←</button>
+                            <button onclick="handleClick(this.parentElement.parentElement.parentNode.id,'next')" class="slider-button slider-button--next" type="button">→</button>
+                        </div>
+                        <div class="writeup">
+                            <div class="heading">
+                                <div class="title">
+                                    <h2 class="name">Interactive Advent Calendar, '22</h2>
+                                    <h3 class="client">ICCF Community Homes</h3>
+                                </div>
+                                <button class="showHide" onclick="toggleProjectOpen(this.parentElement.parentElement.parentElement.parentNode.id)">+</button>
+                            </div>
+                            <div class="row description-container hiddenProjectPiece">
+                                <div class="col-md-7">
+                                    <p>Each year, my agency handles an end-of-year giving campaign which builds upon an Advent calendar format: From December 1 to 25, one sticker a day builds up a picture of ICCF’s work in homeownership counseling, home renovation and construction, emergency sheltering services, and more.</p><p>This year’s calendar was also a map. Colored dots are placed at locations of ICCF’s work in the Grand Rapids neighborhood surrounding their headquarters. Day by day, blocks reveal portraits of volunteers, donors, and neighbors connected to ICCF’s work. Whenever possible, neighbor story stickers are placed near their actual area of influence, while maintaining a broad range for privacy.</p><p>The print campaign includes the calendar poster and sticker set for hundreds of community members to follow along with at home, along with a personalized letter and donation materials. Additionally, I created a webpage adaption of the calendar which updated daily, along with email and social media reminders.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Art Direction</h5>
+                                    <h5>Print Design</h5>
+                                    <h5>Digital Design</h5>
+                                    <h5>Web Interaction</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-container" id="project-SOTAC_Brand">
+                    <div class="preview-container">
+                        <img class="preview-image" src="assets/projects/SOTAC_Brand/1.png">
+                    </div>
+                    <div class="project-content">
+                        <div class="list-wrapper slideshow hiddenProjectPiece">
+                            <ul class="list">
+                                <li class="item"><div class="slider-content"><img src="assets/projects/SOTAC_Brand/1.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/SOTAC_Brand/2.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/SOTAC_Brand/3.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/SOTAC_Brand/4.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/SOTAC_Brand/5.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/SOTAC_Brand/6.jpg"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/SOTAC_Brand/7.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/SOTAC_Brand/8.png"></div></li>
+                                <li class="item"><div class="slider-content"><img src="assets/projects/SOTAC_Brand/9.png"></div></li>
+                            </ul>
+                            <!-- We're calling `handleClick` with a direction argument when the buttons are clicked -->
+                            <button onclick="handleClick(this.parentElement.parentElement.parentNode.id,'previous')" class="slider-button slider-button--previous" type="button">←</button>
+                            <button onclick="handleClick(this.parentElement.parentElement.parentNode.id,'next')" class="slider-button slider-button--next" type="button">→</button>
+                        </div>
+                        <div class="writeup">
+                            <div class="heading">
+                                <div class="title">
+                                    <h2 class="name">Brand Identity & Materials</h2>
+                                    <h3 class="client">SOTAC</h3>
+                                </div>
+                                <button class="showHide" onclick="toggleProjectOpen(this.parentElement.parentElement.parentElement.parentNode.id)">+</button>
+                            </div>
+                            <div class="row description-container hiddenProjectPiece">
+                                <div class="col-md-7">
+                                    <p>SOTA Convoys seeks to provide “Mobile Oases in Surgical Deserts”— securing Surgery, Obstetrics, Trauma Care, Anesthesia (SOTA) care and education in the most remote regions of the world. SOTAC’s central fixture is their convoy of overlanding vehicles, which are used as mobile care facilities and operation centers. They also coordinate logistics between local Ministries of Health, NGOs, professional associations, medical schools, and corporate suppliers to bring medical infrastructure and training to remote regions.</p><p>SOTAC’s badge-style logo is anchored to the window and door bevel shapes common to their convoy vehicles. This style extends to layouts that arrange content in compartments—strong surgical lines with approachable curved edges. The graphic elements literally “connect the dots” to visualize an impact on the network of healthcare infrastructure.  SOTAC seeks to be capable but approachable, with the poise to work with government agencies and the bedside manner to serve patients alike.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Logo Design</h5>
+                                    <h5>Brand Identity</h5>
+                                    <h5>Print Design</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <script type="text/javascript">
+
+            ////////////////////////////////////////
+            // Slider movement buttons vanilla js
+            ////////////////////////////////////////
+
+            function handleClick(projectID, direction) {
+                console.log(projectID); 
+                // Get the list these buttons are attached to—find the first ul underneath this button's parent class by id
+                list = document.querySelector("[id=" + CSS.escape(projectID) + "] > .project-content > .list-wrapper > ul");
+                console.log(list)
+                // We want to know the width of one of the items. We'll use this to decide how many pixels we want our carousel to scroll.
+                //Grab width from first item in THIS slider
+                item = document.querySelector("[id=" + CSS.escape(projectID) + "]  li");
+                console.log(item)
+                itemWidth = item.offsetWidth;
+
+              // Based on the direction we call `scrollBy` with the item width we got earlier
+                if(direction === "previous") {
+                    list.scrollBy({ left: -itemWidth, behavior: "smooth" });
+                } else {
+                    list.scrollBy({ left: itemWidth, behavior: "smooth" });
+                }
+            }
+            console.log("slider script completed")
+
+            ////////////////////////////////////////
+            //Open/close project button vanilla js 
+            ////////////////////////////////////////
+            // Replaced w/ jQuery below that toggles section by clicking anywhere in the description
+            function toggleProjectOpen(myProjectID) {
+                console.log("Open/Close button clicked, but functionality handled by jQuery on whole title block element.")
+            //     // Select the pieces to hide/show on toggle based on their relationship to THIS parent row (with the project's ID)
+            //     // TODO : re-relate to new structure
+            //     var myProject = document.querySelector("[id=" + CSS.escape(myProjectID));
+            //     var myProjectSlideshow = document.querySelector("[id=" + CSS.escape(myProjectID) + "] .slideshow");
+            //     var myProjectDescriptionContainer = document.querySelector("[id=" + CSS.escape(myProjectID) + "] .writeup > .description-container");
+            //     var myProjectPreview = document.querySelector("[id=" + CSS.escape(myProjectID) + "] .preview-container");
+            //     var myProjectButton = document.querySelector("[id=" + CSS.escape(myProjectID) + "] button.showHide");
+
+            //     console.log("myProject: "   +           myProject);
+            //     console.log("myProjectSlideshow: " +    myProjectSlideshow);
+            //     console.log("myProjectDescriptionContainer: " +  myProjectDescriptionContainer);
+            //     console.log("myProjectPreview: " +      myProjectPreview);
+            //     console.log("myProjectButton: " +       myProjectButton);
+
+            //     myProject.classList.toggle("openProject");
+            //     myProjectSlideshow.classList.toggle("hiddenProjectPiece");
+            //     myProjectDescriptionContainer.classList.toggle("hiddenProjectPiece");
+            //     myProjectPreview.classList.toggle("hiddenProjectPiece");
+            //     //TODO: change text on my myProjectButton
+            //     myProjectButton.innerHTML = (myProject.classList.contains("openProject")) ? "-" : "+";
+
+            }
+
+            ////////////////////////////////////////
+            // JQUERY FUNCTIONS
+            ////////////////////////////////////////
+
+            //clicking anywhere in the title container opens the project...
+            $('.heading').click(function(){
+                $(this).siblings('.description-container').slideToggle();//finds child with that class name
+                //slide toggle applies "display:block" while showing anything that's hidden by default, so manually reset that to Flex if it's shown
+                if ($(this).siblings('.description-container').is(':visible'))
+                    $(this).siblings('.description-container').css('display','flex');
+                $(this).parents('.writeup').siblings('.slideshow').slideToggle(); //slide show is at same "generation" to show
+                $(this).parents('.writeup').parents('.project-content').siblings('.preview-container').slideToggle(); //go up to hide the preview iage
+                $(this).children('.showHide').text($($(this).children('.showHide')).text() === '+' ? '-' : '+'); //find the button, and change its text based on its current value (have to re-look up that text value)
+                
+            });
+
+            //clicking on the preview image opens the project...
+            //same functions as above but different relationship to the clicked-on element
+            $('.preview-image').click(function(){
+                $(this).parents('.preview-container').siblings('.project-content').find('.description-container').slideToggle();
+                //slide toggle applies "display:block" while showing anything that's hidden by default, so manually reset that to Flex if it's shown
+                if ($(this).parents('.preview-container').siblings('.project-content').find('.description-container').is(':visible'))
+                    $(this).parents('.preview-container').siblings('.project-content').find('.description-container').css('display','flex');
+                $(this).parents('.preview-container').siblings('.project-content').find('.slideshow').slideToggle();
+                $(this).parents('.preview-container').slideToggle();
+                $(this).parents('.preview-container').siblings('.project-content').find('.showHide').text($($(this).parents('.preview-container').siblings('.project-content').find('.showHide')).text() === '+' ? '-' : '+');
+            });
+
+          
+            // Calculating the height of my name to adjust a spacer so my bio can hit the same horizontal line as text in the left column
+
+            $('#bio-spacer').css({
+                'height' : $('#name-heading').height(),
+                'margin-bottom': $('#name-heading').css('margin-bottom')
+            })
+            $(window).resize(function() {
+                $('#bio-spacer').css({
+                    'height' : $('#name-heading').height(),
+                    'margin-bottom': $('#name-heading').css('margin-bottom')
+                })
+                console.log('resized')
+            });
+
+            function toggleBioPopUp() {
+                console.log("bio popup toggle attempted")
+                var aboutPopup = document.getElementById("about-popup");
+                var aboutArrow = document.getElementById("about-arrow");
+
+                aboutPopup.classList.toggle("hiddenProjectPiece");
+                aboutArrow.innerText = aboutPopup.classList.contains("hiddenProjectPiece") ? "→" : "←";
+            }
+        </script>
+    </body>
+</html>

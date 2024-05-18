@@ -1,0 +1,109 @@
+<!-- Adapted from https://www.nieknijland.nl/blog/make-a-responsive-carousel-with-just-css -->
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>slider test</title>
+</head>
+<body>
+<div class="list-wrapper">
+  <ul class="list">
+    <li class="item"><div class="content">Item 1</div></li>
+    <li class="item"><div class="content">Item 2</div></li>
+    <li class="item"><div class="content">Item 3</div></li>
+    <li class="item"><div class="content">Item 4</div></li>
+    <li class="item"><div class="content">Item 5</div></li>
+  </ul>
+  <!-- We're calling `handleClick` with a direction argument when the buttons are clicked -->
+  <button onclick="handleClick('previous')" class="button button--previous" type="button">➜</button>
+  <button onclick="handleClick('next')" class="button button--next" type="button">➜</button>
+</div>
+<script>
+  const list = document.querySelector(".list");
+
+  // We want to know the width of one of the items. We'll use this to decide how many pixels we want our carousel to scroll.
+  const item = document.querySelector(".item");
+  const itemWidth = item.offsetWidth;
+
+  function handleClick(direction) {
+  	console.log(list)
+  	console.log(item)
+    // Based on the direction we call `scrollBy` with the item width we got earlier
+    if(direction === "previous") {
+      list.scrollBy({ left: -itemWidth, behavior: "smooth" });
+    } else {
+      list.scrollBy({ left: itemWidth, behavior: "smooth" });
+    }
+  }
+  console.log("JS working")
+</script>
+</body>
+<style>
+	.list {
+	  display: flex;
+	  gap: 8px;
+	  padding: 16px;
+
+	  list-style: none;
+	  overflow-x: scroll;
+	  scroll-snap-type: x mandatory;
+		    /* Hide scrollbar in Firefox */
+	  scrollbar-width: none;
+
+	  /* Hide scrollbar in IE and Edge */
+	  -ms-overflow-style: none;
+	}
+	.list::-webkit-scrollbar {
+		  display: none;
+		}
+
+
+	.item {
+	  flex-shrink: 0;
+	  width: 80%;
+	  height: 90vh;
+
+	  background-color: #FFF;
+
+	  scroll-snap-align: center;
+	}
+
+	.content {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  height: 100%;
+	  width: auto;
+	  background-color: beige;
+
+	  font-family: sans-serif;
+	  font-size: 64px;
+	  font-weight: bold;
+	}
+
+	.list-wrapper {
+	  position: relative;
+	}
+
+	.button {
+	  position: absolute;
+	  top: 50%;
+
+	  width: 3rem;
+	  height: 3rem;
+
+	  transform: translateY(-50%);
+	}
+
+	.button--previous {
+	  left: 1.5rem;
+
+	  transform: rotate(180deg);
+	}
+
+	.button--next {
+	  right: 1.5rem;
+	}
+</style>
+
+</html>
