@@ -255,7 +255,7 @@ ul.list > li:before {
     justify-content: center;
     height: 100%;
     width: auto%;
-    background-color: orange;
+    background-color: var(--dark);
 }
 
 .slider-content img {
