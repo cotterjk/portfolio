@@ -91,6 +91,7 @@
     padding-left: var(--Section-Padding, 35px);
     right: 0;
     width: 66.66666666667%;
+    mix-blend-mode: multiply;
 }
 
 html {
