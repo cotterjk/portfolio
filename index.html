@@ -556,7 +556,9 @@
 
                 aboutPopup.classList.toggle("hiddenProjectPiece");
                 aboutArrow.innerText = aboutPopup.classList.contains("hiddenProjectPiece") ? "→" : "←";
-                document.documentElement.style.setProperty('--about-min-height', '999px');
+                //bio height, and thus page height necessary for no scroll minimum is determined responsively by the height of the elements contained in it
+                var responsiveBioHeight = document.getElementById("bio-spacer").offsetHeight + document.getElementById("bio-container").offsetHeight + document.getElementById("bio-photo").offsetHeight
+                document.documentElement.style.setProperty('--about-min-height', responsiveBioHeight + "px"); //TODO: add to page resize function above
                 workColumn.classList.toggle("noScrollPageHeight");
             }
         </script>
