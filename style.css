@@ -395,6 +395,11 @@ button.showHide {
     display: none;
 }
 
+.noScrollPageHeight {
+    height: 100vh;
+    overflow: hidden;
+}
+
 .openProject {
 /*    no change to row itself, just as open/close tag to use for logic of assigning hiddens class above to its children*/
 }

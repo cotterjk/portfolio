@@ -552,9 +552,11 @@
                 console.log("bio popup toggle attempted")
                 var aboutPopup = document.getElementById("about-popup");
                 var aboutArrow = document.getElementById("about-arrow");
+                var workColumn = document.getElementById("work-column"); //limit scrolling whole portfolio height when just bio is open, AKA limits effective page height to "about popup" container
 
                 aboutPopup.classList.toggle("hiddenProjectPiece");
                 aboutArrow.innerText = aboutPopup.classList.contains("hiddenProjectPiece") ? "→" : "←";
+                workColumn.classList.toggle("noScrollPageHeight");
             }
         </script>
     </body>
