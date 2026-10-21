@@ -396,6 +396,8 @@ button.showHide {
     display: none;
 }
 
+/*Added on ABOUT button click
+truncates page when Bio is open to window height, unless more is required to display full bio and photo*/
 .noScrollPageHeight {
     height: var(--about-min-height);
     min-height: 100vh;
