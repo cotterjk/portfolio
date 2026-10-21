@@ -443,4 +443,8 @@ button.showHide {
     {
         gap:0;
     }
+    .noScrollPageHeight {
+    /* hacky compensation for screen ratio on mobile, limiting "short scrolling" the whole page when bio is open need to be able to scroll column a little more*/
+        height: 150vh;
+    }
 }
