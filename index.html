@@ -556,6 +556,7 @@
 
                 aboutPopup.classList.toggle("hiddenProjectPiece");
                 aboutArrow.innerText = aboutPopup.classList.contains("hiddenProjectPiece") ? "→" : "←";
+                document.documentElement.style.setProperty('--about-min-height', '999px');
                 workColumn.classList.toggle("noScrollPageHeight");
             }
         </script>

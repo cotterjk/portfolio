@@ -11,6 +11,7 @@
     --Section-Padding: 25px;
     --Stack-Spacing: 30px;
     --stack-spacing-mini: 10px;
+    --about-min-height: 100vh;
 
 /*Keeping font rules for now as a record of other ones I liked*/
 
@@ -396,7 +397,8 @@ button.showHide {
 }
 
 .noScrollPageHeight {
-    height: 100vh;
+    height: var(--about-min-height);
+    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -442,9 +444,5 @@ button.showHide {
     .description-container
     {
         gap:0;
-    }
-    .noScrollPageHeight {
-    /* hacky compensation for screen ratio on mobile, limiting "short scrolling" the whole page when bio is open need to be able to scroll column a little more*/
-        height: 150vh;
     }
 }
